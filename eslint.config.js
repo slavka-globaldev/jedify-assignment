@@ -21,15 +21,17 @@ export default tseslint.config([
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser
+      globals: globals.browser,
+      parserOptions: {
+        project: './tsconfig.app.json',
+        tsconfigRootDir: import.meta.dirname
+      }
     },
     plugins: {
       react,
       prettier,
       import: importPlugin,
-      'unused-imports': unusedImports,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh
+      'unused-imports': unusedImports
     },
     settings: {
       react: {
@@ -45,7 +47,8 @@ export default tseslint.config([
         },
         'eslint-import-resolver-custom-alias': {
           alias: {
-            '@assets': './src/assets'
+            '@layouts': './src/app/layouts',
+            '@routes': './src/app/routes'
           },
           extensions: ['.ts', '.tsx']
         }
