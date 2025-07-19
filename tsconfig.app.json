@@ -26,6 +26,9 @@
     "paths": {
       "@layouts/*": ["./src/app/layouts/*"],
       "@routes/*": ["./src/app/routes/*"],
+      "@assets/*": ["./src/app/assets/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@modules/*": ["./src/modules/*"],
     }
   },
   "include": ["src"]

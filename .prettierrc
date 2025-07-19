@@ -6,8 +6,8 @@
   "tabWidth": 2,
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
-    "^@(routes)/(.*)$",
-    "^@(layouts)/(.*)$",
+    "^@(routes|assets)/(.*)$",
+    "^@(layouts|pages|modules)/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": true,

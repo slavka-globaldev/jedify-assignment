@@ -1,9 +1,11 @@
 import { Outlet } from 'react-router';
 
+import { Header } from '@modules/header';
+
 const MainLayout = () => (
   <div className="flex min-h-screen flex-col">
-    <header></header>
-    <main className="flex-1">
+    <Header />
+    <main className="container mx-auto flex-1 p-4">
       <Outlet />
     </main>
   </div>
