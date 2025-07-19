@@ -29,6 +29,7 @@
       "@assets/*": ["./src/app/assets/*"],
       "@pages/*": ["./src/pages/*"],
       "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"],
     }
   },
   "include": ["src"]

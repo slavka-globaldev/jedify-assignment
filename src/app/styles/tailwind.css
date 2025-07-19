@@ -9,6 +9,6 @@
 @layer base {
   html {
     @apply text-zinc-100;
-    @apply bg-zinc-950;
+    @apply bg-zinc-900;
   }
 }

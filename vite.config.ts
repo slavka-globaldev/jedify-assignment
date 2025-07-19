@@ -36,6 +36,10 @@ export default defineConfig({
       {
         find: '@modules',
         replacement: resolve(root, 'modules')
+      },
+      {
+        find: '@shared',
+        replacement: resolve(root, 'shared')
       }
     ]
   }

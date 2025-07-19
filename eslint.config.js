@@ -51,7 +51,8 @@ export default tseslint.config([
             '@routes': './src/app/routes',
             '@assets': './src/app/assets',
             '@pages': './src/pages',
-            '@modules': './src/modules'
+            '@modules': './src/modules',
+            '@shared': './src/shared'
           },
           extensions: ['.ts', '.tsx']
         }
@@ -89,6 +90,7 @@ export default tseslint.config([
       '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
       'no-unused-vars': 'off',
+      'no-case-declarations': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

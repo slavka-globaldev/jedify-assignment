@@ -7,7 +7,7 @@
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^@(routes|assets)/(.*)$",
-    "^@(layouts|pages|modules)/(.*)$",
+    "^@(layouts|pages|modules|shared)/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": true,

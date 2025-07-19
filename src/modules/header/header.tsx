@@ -4,11 +4,13 @@ import { Link, NavLink } from 'react-router';
 
 import { ROUTES } from '@routes/app-router.routes';
 
+import { Container } from '@shared/ui/container';
+
 import { menuLinks } from './header.config';
 
 export const Header = () => (
-  <header className="flex h-20 w-full items-center border-b border-b-zinc-800">
-    <div className="container mx-auto flex items-center gap-x-16 p-4">
+  <header className="flex h-20 w-full items-center border-b border-b-zinc-800 bg-zinc-800">
+    <Container className="flex items-center gap-x-16">
       <Link className="text-xl font-bold uppercase" to={ROUTES.DASHBOARD}>
         Lorem Logo
       </Link>
@@ -31,6 +33,6 @@ export const Header = () => (
           </React.Fragment>
         ))}
       </nav>
-    </div>
+    </Container>
   </header>
 );
