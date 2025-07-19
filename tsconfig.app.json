@@ -21,7 +21,12 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "paths": {
+      "@layouts/*": ["./src/app/layouts/*"],
+      "@routes/*": ["./src/app/routes/*"],
+    }
   },
   "include": ["src"]
 }
