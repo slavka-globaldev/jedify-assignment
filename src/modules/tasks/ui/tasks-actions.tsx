@@ -43,6 +43,7 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
               key={status}
               type="button"
               onClick={() => handleFilterToggle({ status })}
+              aria-label={`Filter by ${status} status`}
               className={clsx(
                 'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
                 {
@@ -64,6 +65,7 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
               key={priority}
               onClick={() => handleFilterToggle({ priority })}
               type="button"
+              aria-label={`Filter by ${priority} priority`}
               className={clsx(
                 'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
                 {
@@ -83,6 +85,7 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
         <button
           type="button"
           onClick={() => onViewChange('list')}
+          aria-label="Switch to list view"
           className={clsx(
             'flex items-center rounded-s-lg border border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
             {
@@ -96,6 +99,7 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
         <button
           type="button"
           onClick={() => onViewChange('card')}
+          aria-label="Switch to card view"
           className={clsx(
             'flex items-center rounded-e-lg border border-l-0 border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
             {
