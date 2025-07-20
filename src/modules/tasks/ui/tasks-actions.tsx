@@ -7,6 +7,7 @@ import ListIcon from '@assets/icons/list.svg';
 import type { ITasksFilters } from '@modules/tasks/hooks/use-sorted-tasks';
 import { PRIORITY_OPTIONS, STATUS_OPTIONS } from '@shared/consts';
 import { capitalize } from '@shared/helpers';
+import { Input } from '@shared/ui/inputs';
 
 import type { TTaskVariant } from './tasks-item';
 
@@ -28,12 +29,11 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
   handleFilterToggle
 }) => (
   <div className="flex items-center gap-x-4">
-    <input
+    <Input
       type="text"
       value={searchQuery}
       onChange={(e) => onSearchChange(e.target.value)}
       placeholder="Search tasks..."
-      className="rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 placeholder-zinc-400 focus:ring-2 focus:ring-amber-200 focus:outline-none"
     />
     <div className="ml-auto flex gap-x-4">
       <div className="flex items-center">

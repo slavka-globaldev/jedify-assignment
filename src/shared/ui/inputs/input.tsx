@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface IInputProps extends React.HTMLAttributes<HTMLInputElement> {
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
   type?: 'text' | 'date';
   placeholder?: string;

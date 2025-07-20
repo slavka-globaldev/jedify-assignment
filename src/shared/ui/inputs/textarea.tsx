@@ -1,8 +1,7 @@
 import React from 'react';
 
-interface ITextareaProps extends React.HTMLAttributes<HTMLTextAreaElement> {
+interface ITextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   errorMessage?: string;
-  placeholder?: string;
 }
 
 export const Textarea: React.FC<ITextareaProps> = ({ errorMessage, ...props }) => (

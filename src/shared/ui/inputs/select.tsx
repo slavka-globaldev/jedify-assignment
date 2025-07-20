@@ -2,9 +2,8 @@ import React from 'react';
 
 import { capitalize } from '@shared/helpers';
 
-interface ISelectProps extends React.HTMLAttributes<HTMLSelectElement> {
+interface ISelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   errorMessage?: string;
-  placeholder?: string;
   options?: string[];
 }
 
