@@ -27,85 +27,86 @@ export const TasksActions: React.FC<ITasksActionsProps> = ({
   onSearchChange,
   filters,
   handleFilterToggle
-}) => (
-  <div className="flex items-center gap-x-4">
-    <Input
-      type="text"
-      value={searchQuery}
-      onChange={(e) => onSearchChange(e.target.value)}
-      placeholder="Search tasks..."
-    />
-    <div className="ml-auto flex gap-x-4">
-      <div className="flex items-center">
-        <span className="mr-2 text-sm">Status:</span>
-        {STATUS_OPTIONS.map((status, idx) => (
-          <button
-            key={status}
-            type="button"
-            onClick={() => handleFilterToggle({ status })}
-            className={clsx(
-              'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
-              {
-                'bg-zinc-700 text-amber-200': filters?.status === status,
-                'bg-zinc-800 text-zinc-100': filters?.status !== status,
-                'rounded-l-lg': idx === 0,
-                'rounded-r-lg': idx === STATUS_OPTIONS.length - 1
-              }
-            )}
-          >
-            {capitalize(status)}
-          </button>
-        ))}
+}) => {
+  const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    onSearchChange(e.target.value);
+  };
+
+  return (
+    <div className="flex items-center gap-x-4">
+      <Input type="text" value={searchQuery} onChange={handleSearchChange} placeholder="Search tasks..." />
+      <div className="ml-auto flex gap-x-4">
+        <div className="flex items-center">
+          <span className="mr-2 text-sm">Status:</span>
+          {STATUS_OPTIONS.map((status, idx) => (
+            <button
+              key={status}
+              type="button"
+              onClick={() => handleFilterToggle({ status })}
+              className={clsx(
+                'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
+                {
+                  'bg-zinc-700 text-amber-200': filters?.status === status,
+                  'bg-zinc-800 text-zinc-100': filters?.status !== status,
+                  'rounded-l-lg': idx === 0,
+                  'rounded-r-lg': idx === STATUS_OPTIONS.length - 1
+                }
+              )}
+            >
+              {capitalize(status)}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center">
+          <span className="mr-2 text-sm">Priority:</span>
+          {PRIORITY_OPTIONS.map((priority, idx) => (
+            <button
+              key={priority}
+              onClick={() => handleFilterToggle({ priority })}
+              type="button"
+              className={clsx(
+                'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
+                {
+                  'bg-zinc-700 text-amber-200': filters?.priority === priority,
+                  'bg-zinc-800 text-zinc-100': filters?.priority !== priority,
+                  'rounded-l-lg': idx === 0,
+                  'rounded-r-lg': idx === PRIORITY_OPTIONS.length - 1
+                }
+              )}
+            >
+              {capitalize(priority)}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="flex items-center">
-        <span className="mr-2 text-sm">Priority:</span>
-        {PRIORITY_OPTIONS.map((priority, idx) => (
-          <button
-            key={priority}
-            onClick={() => handleFilterToggle({ priority })}
-            type="button"
-            className={clsx(
-              'flex items-center border border-zinc-700 px-2 py-1 text-sm transition-colors hover:bg-zinc-700',
-              {
-                'bg-zinc-700 text-amber-200': filters?.priority === priority,
-                'bg-zinc-800 text-zinc-100': filters?.priority !== priority,
-                'rounded-l-lg': idx === 0,
-                'rounded-r-lg': idx === PRIORITY_OPTIONS.length - 1
-              }
-            )}
-          >
-            {capitalize(priority)}
-          </button>
-        ))}
+      <div className="flex shadow-xs">
+        <button
+          type="button"
+          onClick={() => onViewChange('list')}
+          className={clsx(
+            'flex items-center rounded-s-lg border border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
+            {
+              'bg-zinc-700 text-amber-200': currentView === 'list',
+              'bg-zinc-800 text-zinc-100': currentView !== 'list'
+            }
+          )}
+        >
+          <ListIcon className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => onViewChange('card')}
+          className={clsx(
+            'flex items-center rounded-e-lg border border-l-0 border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
+            {
+              'bg-zinc-700 text-amber-200': currentView === 'card',
+              'bg-zinc-800 text-zinc-100': currentView !== 'card'
+            }
+          )}
+        >
+          <CardsIcon className="h-4 w-4" />
+        </button>
       </div>
     </div>
-    <div className="flex shadow-xs">
-      <button
-        type="button"
-        onClick={() => onViewChange('list')}
-        className={clsx(
-          'flex items-center rounded-s-lg border border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
-          {
-            'bg-zinc-700 text-amber-200': currentView === 'list',
-            'bg-zinc-800 text-zinc-100': currentView !== 'list'
-          }
-        )}
-      >
-        <ListIcon className="h-4 w-4" />
-      </button>
-      <button
-        type="button"
-        onClick={() => onViewChange('card')}
-        className={clsx(
-          'flex items-center rounded-e-lg border border-l-0 border-zinc-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-700',
-          {
-            'bg-zinc-700 text-amber-200': currentView === 'card',
-            'bg-zinc-800 text-zinc-100': currentView !== 'card'
-          }
-        )}
-      >
-        <CardsIcon className="h-4 w-4" />
-      </button>
-    </div>
-  </div>
-);
+  );
+};

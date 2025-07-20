@@ -48,19 +48,35 @@ export const TaskCreateModal: React.FC<ITaskCreateModalProps> = ({ isOpen, onClo
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Modal isOpen={isOpen} onClose={onClose} title="Create New Task">
           <div className="flex flex-col gap-y-4">
-            <Input type="text" {...register('title')} placeholder="Title" errorMessage={errors.title?.message} />
+            <Input
+              label="Title"
+              id="title"
+              type="text"
+              {...register('title')}
+              placeholder="Enter task title..."
+              errorMessage={errors.title?.message}
+            />
             <Textarea
+              label="Description"
+              id="description"
               {...register('description')}
-              placeholder="Description"
+              placeholder="Enter task description..."
               errorMessage={errors.description?.message}
             />
             <Input
+              label="Created Date"
+              id="createdAt"
               type="date"
               {...register('createdAt')}
-              placeholder="Title"
               errorMessage={errors.createdAt?.message}
             />
-            <Select {...register('priority')} errorMessage={errors.priority?.message} options={PRIORITY_OPTIONS} />
+            <Select
+              label="Priority"
+              id="priority"
+              {...register('priority')}
+              errorMessage={errors.priority?.message}
+              options={PRIORITY_OPTIONS}
+            />
           </div>
         </Modal>
       </form>
