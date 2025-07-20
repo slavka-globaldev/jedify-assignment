@@ -22,7 +22,7 @@ export const Modal: React.FC<IModalProps> = ({ title, children, isOpen, onClose,
         <div className="relative rounded-lg bg-zinc-700 shadow-sm">
           <div className="flex items-center justify-between rounded-t border-b border-zinc-600 p-4">
             <h3 className="text-xl font-semibold">{title}</h3>
-            <Button onClick={onClose}>
+            <Button aria-label="Close modal" onClick={onClose}>
               <CloseIcon className="h-3 w-3" />
             </Button>
           </div>

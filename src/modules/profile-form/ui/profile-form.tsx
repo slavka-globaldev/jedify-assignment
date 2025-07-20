@@ -40,7 +40,11 @@ export const ProfileForm = () => {
   return (
     <FormProvider {...formMethods}>
       <form className="max-w-lg" onSubmit={handleSubmit(onSubmit)} noValidate>
-        {isSuccessfullySubmitted && <div className="mb-4 text-green-600">Profile updated successfully!</div>}
+        {isSuccessfullySubmitted && (
+          <div className="mb-4 text-green-600" data-testid="success-message">
+            Profile updated successfully!
+          </div>
+        )}
         <div className="flex flex-col gap-y-4">
           <Input
             label="Full Name"
@@ -76,7 +80,9 @@ export const ProfileForm = () => {
             <Button variant="secondary" onClick={() => reset(defaultValues)}>
               Reset
             </Button>
-            <Button type="submit">Save</Button>
+            <Button data-testid="submit-button" type="submit">
+              Save
+            </Button>
           </div>
         </div>
       </form>

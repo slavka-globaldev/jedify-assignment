@@ -14,7 +14,7 @@ export const Header = () => (
       <Link className="text-xl font-bold uppercase" to={ROUTES.DASHBOARD}>
         Lorem Logo
       </Link>
-      <nav className="flex items-center">
+      <nav className="flex items-center" aria-label="Main Navigation">
         {menuLinks.map((link, idx) => (
           <React.Fragment key={link.label}>
             <NavLink
