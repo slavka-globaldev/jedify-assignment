@@ -2,19 +2,19 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { capitalize } from '@shared/helpers';
-import type { TTaskPriority } from '@shared/types';
+import { ETaskPriority } from '@shared/types';
 
 interface ITaskChipProps {
-  type: TTaskPriority;
+  type: ETaskPriority;
 }
 
-const getChipColor = (type: TTaskPriority): string => {
+const getChipColor = (type: ETaskPriority): string => {
   switch (type) {
-    case 'low':
+    case ETaskPriority.Low:
       return 'bg-green-500';
-    case 'medium':
+    case ETaskPriority.Medium:
       return 'bg-yellow-500';
-    case 'high':
+    case ETaskPriority.High:
       return 'bg-red-500';
     default:
       const _exhaustiveCheck: never = type;

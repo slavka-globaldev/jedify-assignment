@@ -5,9 +5,16 @@ type TButtonVariant = 'primary' | 'secondary';
 
 interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: TButtonVariant;
+  type?: 'button' | 'submit';
 }
 
-export const Button: React.FC<IButtonProps> = ({ children, variant = 'primary', className, ...props }) => (
+export const Button: React.FC<IButtonProps> = ({
+  children,
+  variant = 'primary',
+  className,
+  type = 'button',
+  ...props
+}) => (
   <button
     className={clsx(
       'rounded-lg px-3 py-2 text-center text-sm font-medium transition-colors',
@@ -17,7 +24,7 @@ export const Button: React.FC<IButtonProps> = ({ children, variant = 'primary', 
       },
       className
     )}
-    type="button"
+    type={type}
     {...props}
   >
     {children}

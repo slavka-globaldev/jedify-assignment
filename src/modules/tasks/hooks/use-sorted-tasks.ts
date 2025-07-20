@@ -1,12 +1,12 @@
 import React from 'react';
 
-import type { TTaskPriority, TTaskStatus } from '@shared/types';
+import type { ETaskPriority, ETaskStatus } from '@shared/types';
 
 import { useTasksStore } from '../store/tasks.store';
 
 export interface ITasksFilters {
-  status?: TTaskStatus;
-  priority?: TTaskPriority;
+  status?: ETaskStatus;
+  priority?: ETaskPriority;
 }
 
 interface IUseSortedTasksParams {

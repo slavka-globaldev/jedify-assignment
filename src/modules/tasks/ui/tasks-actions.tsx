@@ -5,8 +5,8 @@ import CardsIcon from '@assets/icons/cards.svg';
 import ListIcon from '@assets/icons/list.svg';
 
 import type { ITasksFilters } from '@modules/tasks/hooks/use-sorted-tasks';
+import { PRIORITY_OPTIONS, STATUS_OPTIONS } from '@shared/consts';
 import { capitalize } from '@shared/helpers';
-import type { TTaskPriority, TTaskStatus } from '@shared/types';
 
 import type { TTaskVariant } from './tasks-item';
 
@@ -18,9 +18,6 @@ interface ITasksActionsProps {
   filters?: ITasksFilters;
   handleFilterToggle: (filters: ITasksFilters) => void;
 }
-
-const STATUS_OPTIONS: TTaskStatus[] = ['pending', 'completed'];
-const PRIORITY_OPTIONS: TTaskPriority[] = ['low', 'medium', 'high'];
 
 export const TasksActions: React.FC<ITasksActionsProps> = ({
   currentView,

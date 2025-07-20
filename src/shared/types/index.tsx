@@ -1,1 +1,2 @@
-export type { ITask, TTaskStatus, TTaskPriority } from './tasks';
+export { ETaskPriority, ETaskStatus } from './tasks';
+export type { ITask } from './tasks';
