@@ -48,7 +48,11 @@ export default tseslint.config([
         'eslint-import-resolver-custom-alias': {
           alias: {
             '@layouts': './src/app/layouts',
-            '@routes': './src/app/routes'
+            '@routes': './src/app/routes',
+            '@assets': './src/app/assets',
+            '@pages': './src/pages',
+            '@modules': './src/modules',
+            '@shared': './src/shared'
           },
           extensions: ['.ts', '.tsx']
         }
@@ -61,7 +65,7 @@ export default tseslint.config([
       'arrow-body-style': ['error', 'as-needed'],
       'no-console': 'error',
       semi: ['error', 'always'],
-      'import/no-unresolved': ['error', { caseSensitive: true }],
+      'import/no-unresolved': ['error', { caseSensitive: true, ignore: ['.svg'] }],
       'react/jsx-curly-brace-presence': 'error',
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
       '@typescript-eslint/no-misused-promises': [
@@ -86,6 +90,7 @@ export default tseslint.config([
       '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
       'no-unused-vars': 'off',
+      'no-case-declarations': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

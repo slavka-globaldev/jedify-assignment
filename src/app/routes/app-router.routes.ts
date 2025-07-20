@@ -1,3 +1,5 @@
 export const ROUTES = {
-  DASHBOARD: 'dashboard'
+  DASHBOARD: '/dashboard',
+  CHAT: '/chat',
+  PROFILE: '/profile'
 } as const;
