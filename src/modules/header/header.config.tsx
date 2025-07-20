@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import ChatIcon from '@assets/icons/chat.svg';
+import ProfileIcon from '@assets/icons/profile.svg';
 import TaskDashboardIcon from '@assets/icons/tasks.svg';
 import { ROUTES } from '@routes/app-router.routes';
 
@@ -20,5 +21,10 @@ export const menuLinks: IMenuLink[] = [
     label: 'Chat',
     icon: <ChatIcon className="h-5 w-5" />,
     link: ROUTES.CHAT
+  },
+  {
+    label: 'Profile',
+    icon: <ProfileIcon className="h-5 w-5" />,
+    link: ROUTES.PROFILE
   }
 ];
