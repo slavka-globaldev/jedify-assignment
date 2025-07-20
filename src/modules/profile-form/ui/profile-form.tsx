@@ -24,7 +24,6 @@ export const ProfileForm = () => {
   } = formMethods;
 
   const onSubmit = (_: TProfileFormData) => {
-    console.log('Form submitted');
     setIsSuccessfullySubmitted(true);
   };
 
